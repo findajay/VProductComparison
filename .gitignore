@@ -1,0 +1,15 @@
+﻿################################################################################
+# This .gitignore file was automatically created by Microsoft(R) Visual Studio.
+################################################################################
+
+/.vs/TariffComparison/v16/Server/sqlite3
+/.vs/TariffComparison/v16/TestStore/0
+/.vs/VerivoxGithub/v16/TestStore/0
+/.vs/VerivoxGithub/v16
+/.vs
+/TariffComparison/bin/Debug/netcoreapp3.1
+/TariffComparison.Services/bin/Debug/netcoreapp3.1
+/TarrifComparison.Models/bin/Debug/netcoreapp3.1
+/TarrifComparison.Models/obj
+/TarrifComparison.Tests/bin/Debug/netcoreapp3.1
+/TarrifComparison.Tests/obj

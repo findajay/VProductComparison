@@ -1,0 +1,11 @@
+D:\Learning\Verivox\TariffComparison\TariffComparison.Services\bin\Debug\netcoreapp3.1\TariffComparison.Services.deps.json
+D:\Learning\Verivox\TariffComparison\TariffComparison.Services\bin\Debug\netcoreapp3.1\TariffComparison.Services.dll
+D:\Learning\Verivox\TariffComparison\TariffComparison.Services\bin\Debug\netcoreapp3.1\TariffComparison.Services.pdb
+D:\Learning\Verivox\TariffComparison\TariffComparison.Services\bin\Debug\netcoreapp3.1\TarrifComparison.Models.dll
+D:\Learning\Verivox\TariffComparison\TariffComparison.Services\bin\Debug\netcoreapp3.1\TarrifComparison.Models.pdb
+D:\Learning\Verivox\TariffComparison\TariffComparison.Services\obj\Debug\netcoreapp3.1\TariffComparison.Services.csprojAssemblyReference.cache
+D:\Learning\Verivox\TariffComparison\TariffComparison.Services\obj\Debug\netcoreapp3.1\TariffComparison.Services.AssemblyInfoInputs.cache
+D:\Learning\Verivox\TariffComparison\TariffComparison.Services\obj\Debug\netcoreapp3.1\TariffComparison.Services.AssemblyInfo.cs
+D:\Learning\Verivox\TariffComparison\TariffComparison.Services\obj\Debug\netcoreapp3.1\TariffComparison.Services.csproj.CopyComplete
+D:\Learning\Verivox\TariffComparison\TariffComparison.Services\obj\Debug\netcoreapp3.1\TariffComparison.Services.dll
+D:\Learning\Verivox\TariffComparison\TariffComparison.Services\obj\Debug\netcoreapp3.1\TariffComparison.Services.pdb
