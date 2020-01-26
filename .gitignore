@@ -13,3 +13,9 @@
 /TarrifComparison.Models/obj
 /TarrifComparison.Tests/bin/Debug/netcoreapp3.1
 /TarrifComparison.Tests/obj
+/TarrifComparison.Models/bin/Release/netcoreapp3.1
+/TariffComparison.Services/bin/Release/netcoreapp3.1
+/TariffComparison.Services/obj/Release/netcoreapp3.1
+/TariffComparison/obj/Release/netcoreapp3.1
+/TariffComparison/bin/Release/netcoreapp3.1
+/TariffComparison/Properties/PublishProfiles
