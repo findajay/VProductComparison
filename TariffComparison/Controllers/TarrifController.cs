@@ -1,12 +1,10 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
+﻿using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Logging;
-using TarrifComparison.Models;
+using System;
+using System.Collections.Generic;
 using TariffComparison.Services.Contract;
-using System.Net;
+using TarrifComparison.Models;
 
 namespace TariffComparison.Controllers
 {
@@ -34,6 +32,7 @@ namespace TariffComparison.Controllers
         /// <param name="consumptionPerYear">consumption in kwh per year</param>
         /// <returns></returns>
         [HttpGet("{consumptionPerYear}")]
+        [AllowAnonymous]
         public ActionResult<List<Tarrif>> Get(int consumptionPerYear)
         {
             try
@@ -72,6 +71,17 @@ namespace TariffComparison.Controllers
                 throw;
             }
 
+        }
+
+        /// <summary>
+        /// Welcome tarrif
+        /// </summary>
+        /// <returns>string</returns>
+        [HttpGet]
+        [AllowAnonymous]
+        public ActionResult<string> Get()
+        {
+            return "Welcome to Tarrif Comparison API";
         }
     }
 }
