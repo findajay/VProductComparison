@@ -17,6 +17,9 @@ This project is Build using Xunit framwork for unit testing to support TDD. For 
 5. TarrifComparison.AngularClient
 This is a single page application build using latest stable angular version. It consist two routes Home and Product compare which will take consumed unit as input and return the tarrifs based on that. 
 
+6. Alexa Skill 
+I have created a skill to be used on alexa device using azure logic app as a backend for skill. This skill can be invoked with the phrase "Alexa, start Verivox Compare”.
+
 A model to build two products and compare tarrif based on thier annual charges. Comparison will accept input paramter consumption kwh/year.
 
 Response will return a List of tarrif for both product based on annual cost in acscending order.
