@@ -1,0 +1,222 @@
+{
+  "definition": {
+    "$schema": "https://schema.management.azure.com/providers/Microsoft.Logic/schemas/2016-06-01/workflowdefinition.json#",
+    "actions": {
+      "ConsumedUnit": {
+        "inputs": {
+          "variables": [
+            {
+              "name": "ConsumedUnitsInYear",
+              "type": "integer",
+              "value": 0
+            }
+          ]
+        },
+        "runAfter": {},
+        "type": "InitializeVariable"
+      },
+      "RequestType": {
+        "cases": {
+          "Intent": {
+            "actions": {
+              "IntentType": {
+                "cases": {
+                  "gettarrifs": {
+                    "actions": {
+                      "GetTarrif": {
+                        "inputs": {
+                          "headers": {
+                            "content-type": "application/json"
+                          },
+                          "method": "GET",
+                          "uri": "https://tariffcomparison20200126032722.azurewebsites.net/tarrif/@{variables('ConsumedUnitsInYear')}"
+                        },
+                        "runAfter": {},
+                        "type": "Http"
+                      },
+                      "Tarrif_response": {
+                        "inputs": {
+                          "body": {
+                            "response": {
+                              "outputSpeech": {
+                                "text": " @{body('GetTarrif')}.",
+                                "type": "PlainText"
+                              },
+                              "shouldEndSession": false
+                            },
+                            "version": "1.0"
+                          },
+                          "headers": {
+                            "content-type": "application/json"
+                          },
+                          "statusCode": 200
+                        },
+                        "kind": "Http",
+                        "runAfter": {
+                          "GetTarrif": [
+                            "Succeeded"
+                          ]
+                        },
+                        "type": "Response"
+                      }
+                    },
+                    "case": "gettarrifs"
+                  }
+                },
+                "default": {
+                  "actions": {}
+                },
+                "expression": "@body('ParseIntent')?['name']",
+                "runAfter": {
+                  "Set_Consumption": [
+                    "Succeeded"
+                  ]
+                },
+                "type": "Switch"
+              },
+              "ParseIntent": {
+                "inputs": {
+                  "content": "@triggerBody()?['request']?['intent']",
+                  "schema": {
+                    "properties": {
+                      "confirmationStatus": {
+                        "type": "string"
+                      },
+                      "name": {
+                        "type": "string"
+                      },
+                      "slots": {
+                        "properties": {
+                          "consumption": {
+                            "confirmationStatus": "NONE",
+                            "name": "consumption"
+                          }
+                        },
+                        "type": "object"
+                      }
+                    },
+                    "type": "object"
+                  }
+                },
+                "runAfter": {},
+                "type": "ParseJson"
+              },
+              "Set_Consumption": {
+                "inputs": {
+                  "name": "ConsumedUnitsInYear",
+                  "value": "@int(body('ParseIntent')?['slots']?['consumption']?['value'])"
+                },
+                "runAfter": {
+                  "ParseIntent": [
+                    "Succeeded"
+                  ]
+                },
+                "type": "SetVariable"
+              }
+            },
+            "case": "IntentRequest"
+          },
+          "Luanch": {
+            "actions": {
+              "Response": {
+                "inputs": {
+                  "body": {
+                    "response": {
+                      "outputSpeech": {
+                        "text": " Welcome to verivox compare ! I can help you find best products by your yearly conumption units.",
+                        "type": "PlainText"
+                      },
+                      "shouldEndSession": false
+                    },
+                    "version": "1.0"
+                  },
+                  "headers": {
+                    "content-type": "application/json"
+                  },
+                  "schema": {
+                    "properties": {
+                      "response": {
+                        "properties": {
+                          "outputSpeech": {
+                            "properties": {
+                              "text": {
+                                "type": "string"
+                              },
+                              "type": {
+                                "type": "string"
+                              }
+                            },
+                            "type": "object"
+                          },
+                          "shouldEndSession": {
+                            "type": "boolean"
+                          }
+                        },
+                        "type": "object"
+                      },
+                      "version": {
+                        "type": "string"
+                      }
+                    },
+                    "type": "object"
+                  },
+                  "statusCode": 200
+                },
+                "kind": "Http",
+                "runAfter": {},
+                "type": "Response"
+              }
+            },
+            "case": "LaunchRequest"
+          }
+        },
+        "default": {
+          "actions": {}
+        },
+        "expression": "@triggerBody()?['request']?['type']",
+        "runAfter": {
+          "ConsumedUnit": [
+            "Succeeded"
+          ]
+        },
+        "type": "Switch"
+      }
+    },
+    "contentVersion": "1.0.0.0",
+    "outputs": {},
+    "parameters": {},
+    "triggers": {
+      "manual": {
+        "inputs": {
+          "schema": {
+            "properties": {
+              "request": {
+                "properties": {
+                  "intent": {
+                    "properties": {
+                      "name": {
+                        "type": "string"
+                      }
+                    },
+                    "type": "object"
+                  },
+                  "type": {
+                    "type": "string"
+                  }
+                },
+                "type": "object"
+              },
+              "version": {
+                "type": "string"
+              }
+            },
+            "type": "object"
+          }
+        },
+        "kind": "Http",
+        "type": "Request"
+      }
+    }
+  },
+  "parameters": {}
+}

@@ -1,0 +1,43 @@
+{
+  "interactionModel": {
+    "languageModel": {
+      "invocationName": "verivox compare",
+      "intents": [
+        {
+          "name": "AMAZON.FallbackIntent",
+          "samples": []
+        },
+        {
+          "name": "AMAZON.CancelIntent",
+          "samples": []
+        },
+        {
+          "name": "AMAZON.HelpIntent",
+          "samples": []
+        },
+        {
+          "name": "AMAZON.StopIntent",
+          "samples": []
+        },
+        {
+          "name": "AMAZON.NavigateHomeIntent",
+          "samples": []
+        },
+        {
+          "name": "gettarrifs",
+          "slots": [
+            {
+              "name": "consumption",
+              "type": "AMAZON.NUMBER"
+            }
+          ],
+          "samples": [
+            "Show me product for {consumption}",
+            "Get me tarrifs for {consumption} consumption units"
+          ]
+        }
+      ],
+      "types": []
+    }
+  }
+}

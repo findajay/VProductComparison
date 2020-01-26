@@ -13,7 +13,17 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution 
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "TariffComparison.Services", "TariffComparison.Services\TariffComparison.Services.csproj", "{D80E0AA6-A0CD-4C52-A695-29EB04C7FE5E}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TarrifComparison.AngularClient", "TarrifComparison.AngularClient\TarrifComparison.AngularClient.csproj", "{712C712F-65A9-4B7C-995A-C183A1BBFE0E}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "TarrifComparison.AngularClient", "TarrifComparison.AngularClient\TarrifComparison.AngularClient.csproj", "{712C712F-65A9-4B7C-995A-C183A1BBFE0E}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "AlexaSkill", "AlexaSkill", "{3213F9A6-0C30-46B4-9E0E-C20DE93FC19E}"
+	ProjectSection(SolutionItems) = preProject
+		AlexaSkill.json = AlexaSkill.json
+	EndProjectSection
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Backend", "Backend", "{29F28626-FE8E-482C-83C5-950F2E9CE77E}"
+	ProjectSection(SolutionItems) = preProject
+		LogicApp.json = LogicApp.json
+	EndProjectSection
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -44,6 +54,10 @@ Global
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{3213F9A6-0C30-46B4-9E0E-C20DE93FC19E} = {9EE00F9C-112D-4B10-AB5C-8D2369C0E934}
+		{29F28626-FE8E-482C-83C5-950F2E9CE77E} = {3213F9A6-0C30-46B4-9E0E-C20DE93FC19E}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {8AE899BB-FAD9-40AB-8EC6-B94808AFDEDC}
