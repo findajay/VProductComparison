@@ -1,0 +1,8 @@
+{
+  "/tarrif/*": {
+    "target": "https://localhost:44387",
+    "secure": false,
+    "logLevel": "debug",
+    "changeOrigin": true
+  }
+}

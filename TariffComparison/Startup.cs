@@ -30,6 +30,10 @@ namespace TariffComparison
             {
                 c.SwaggerDoc("v1", new OpenApiInfo { Title = "Verivox Tarrif API", Version = "v1" });
             });
+            services.AddCors(c =>
+            {
+                c.AddPolicy("AllowOrigin", options => options.AllowAnyOrigin());
+            });
             ConfigureAuthentication(services);
         }
 
@@ -61,7 +65,7 @@ namespace TariffComparison
             {
                 app.UseDeveloperExceptionPage();
             }
-
+            app.UseCors(options => options.AllowAnyOrigin());
             app.UseHttpsRedirection();
 
             app.UseRouting();

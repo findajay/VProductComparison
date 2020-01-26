@@ -1,0 +1,22 @@
+<h1 id="tableLabel">product compare</h1>
+
+<p>This component will fetch product data from the server using rest APIs.</p>
+
+<p *ngIf="!tarrifs || disabledLoader"><em>Loading...</em></p>
+<input (keyup)="onKey($event)">
+<button class="btn btn-primary" (click)="GetTarrifsByConsumption()">Get Tarrifs for {{consumedUnits}} KWH/Year</button>
+<table class='table table-striped' aria-labelledby="tableLabel" *ngIf="tarrifs">
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th>Annual Cost in €</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let tarrif of tarrifs">
+      <td>{{ tarrif.name }}</td>
+      <td>{{ tarrif.annualCost }}</td>
+
+    </tr>
+  </tbody>
+</table>
